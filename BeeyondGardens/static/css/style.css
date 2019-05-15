@@ -1,0 +1,20 @@
+
+CSS
+html,
+body,
+header,
+#intro {
+    height: 90%;
+}
+
+#intro {
+    background: url("/static/img/garden.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.logo {
+  width: 80px;
+  }

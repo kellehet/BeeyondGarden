@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %} | Welcome{% endblock %}
+{% block content %}
+
+<div id="intro" class="view">
+    <div class="mask">
+        <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-md-10">
+                    <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">Beeyond Gardens</h2>
+                    <hr class="hr-light">
+                    <h4 class="white-text my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
+                        consequuntur.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% include 'partials/_alerts.html' %}
+<main class="mt-5">
+    <div class="container">
+        <section id="services" class="py-5">
+             <h2 class="mb-5 font-weight-bold text-center">Our Services</h2>
+            <div class="row">
+                {% for service in services %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card listing-preview">
+                        <div class="card-body">
+                            <div class="listing-heading text-center">
+                                <i class="fas fa-{{ service.icon }} fa-4x orange-text"></i>
+                                <h4 class="text-primary">{{ service.title }}</h4>
+                            </div>
+                            <hr>
+                            <div class="row py-2 text-secondary">
+                                <p>{{ service.short_description }}</p>
+                            </div>
+                            <hr>
+                            <a href="{% url 'service' service.type %}" class="btn btn-info btn-block">More Info</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        <hr class="my-5">
+        <section id="gallery">
+            <!-- Heading -->
+            <h2 class="mb-5 font-weight-bold text-center">About Us</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="view overlay z-depth-1-half">
+                        <img src="https://mdbootstrap.com/img/Photos/Others/images/48.jpg" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <h4 class="mb-3"><strong>Shawn Kelleher</strong></h4>
+                    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
+                        maxime
+                        placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis
+                        debitis aut rerum.</p>
+
+                    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
+                        maxime
+                        placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis
+                        debitis aut rerum.</p>
+
+                     <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
+                        maxime
+                        placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis
+                        debitis aut rerum.</p>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+{% endblock %}
